@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-crnl-nitro';
+import { add } from 'react-native-crnl-nitro';
 
-const result = multiply(3, 7);
+const result = add(3, 7);
 
 export default function App() {
   return (

@@ -1,5 +1,9 @@
-const CrnlNitro = require('./NativeCrnlNitro').default;
+import { NitroModules } from 'react-native-nitro-modules';
+import type { CrnlNitro } from './CrnlNitro.nitro';
 
-export function multiply(a: number, b: number): number {
-  return CrnlNitro.multiply(a, b);
+export const CrnlNitroHybridObject =
+  NitroModules.createHybridObject<CrnlNitro>('CrnlNitro');
+
+export function add(a: number, b: number): number {
+  return CrnlNitroHybridObject.add(a, b);
 }
