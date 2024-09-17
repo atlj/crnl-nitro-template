@@ -1,15 +1,22 @@
-cmake_minimum_required(VERSION 3.4.1)
+cmake_minimum_required(VERSION 3.9.0)
 project(CrnlNitro)
 
-set (CMAKE_VERBOSE_MAKEFILE ON)
-set (CMAKE_CXX_STANDARD 14)
+set(PACKAGE_NAME CrnlNitro)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+set(CMAKE_CXX_STANDARD 14)
 
-add_library(react-native-crnl-nitro            SHARED
-            ../cpp/react-native-crnl-nitro.cpp
-            cpp-adapter.cpp
-)
+# Define C++ library and add all sources
+add_library(${PACKAGE_NAME} SHARED src/main/cpp/cpp-adapter.cpp)
 
-# Specifies a path to native header files.
-include_directories(
-            ../cpp
+# Add Nitrogen specs :)
+include(
+  ${CMAKE_SOURCE_DIR}/../nitrogen/generated/android/CrnlNitro+autolinking.cmake)
+
+# Set up local includes
+include_directories("src/main/cpp" "../cpp")
+
+find_library(LOG_LIB log)
+
+# Link all libraries together
+target_link_libraries(${PACKAGE_NAME} ${LOG_LIB} android # <-- Android core
 )
