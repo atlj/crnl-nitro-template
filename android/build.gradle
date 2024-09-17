@@ -50,11 +50,11 @@ def supportsNamespace() {
 
 android {
   if (supportsNamespace()) {
-    namespace "com.crnlnitro"
+    namespace "com.margelo.nitro.crnlnitro"
 
     sourceSets {
       main {
-        manifest.srcFile "src/main/AndroidManifestNew.xml"
+        manifest.srcFile "src/main/AndroidManifest.xml"
       }
     }
   }
@@ -101,17 +101,6 @@ android {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
-
-  sourceSets {
-    main {
-      if (isNewArchitectureEnabled()) {
-          java.srcDirs += [
-            "generated/java",
-            "generated/jni"
-          ]
-      }
-    }
-  }
 }
 
 repositories {
@@ -130,12 +119,4 @@ dependencies {
 
   // Add a dependency on NitroModules
   implementation project(":react-native-nitro-modules")
-}
-
-if (isNewArchitectureEnabled()) {
-  react {
-    jsRootDir = file("../src/")
-    libraryName = "CrnlNitro"
-    codegenJavaPackageName = "com.crnlnitro"
-  }
 }
