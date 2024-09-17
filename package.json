@@ -183,22 +183,9 @@
       ]
     ]
   },
-  "codegenConfig": {
-    "name": "RNCrnlNitroSpec",
-    "type": "all",
-    "jsSrcsDir": "src",
-    "outputDir": {
-      "ios": "ios/generated",
-      "android": "android/generated"
-    },
-    "android": {
-      "javaPackageName": "com.crnlnitro"
-    },
-    "includesGeneratedCode": true
-  },
   "create-react-native-library": {
-    "type": "module-new",
-    "languages": "cpp",
+    "type": "nitro",
+    "languages": "kotlin-swift",
     "version": "0.41.2"
   }
 }
