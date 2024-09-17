@@ -1,0 +1,12 @@
+{
+  "cxxNamespace": ["<<cxxNamespace>>"],
+  "ios": {
+    "iosModulename": "react-native-crnl-nitro"
+  },
+  "android": {
+    "androidNamespace": ["com.crnlnitro"],
+    "androidCxxLibName": "CrnlNitro"
+  },
+  "autolinking": {},
+  "ignorePaths": ["node_modules"]
+}
