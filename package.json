@@ -23,6 +23,7 @@
     "android",
     "ios",
     "cpp",
+    "nitrogen",
     "*.podspec",
     "!ios/build",
     "!android/build",
@@ -39,11 +40,12 @@
     "example": "yarn workspace react-native-crnl-nitro-example",
     "test": "jest",
     "typecheck": "tsc",
+    "typescript": "tsc --noEmit false",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "prepare": "bob build",
     "release": "release-it",
-    "specs": "bun run --filter=\"**\" typescript && bun nitro-codegen --logLevel=\"debug\""
+    "nitrogen": "bun run --filter=\"**\" typescript && bun nitro-codegen --logLevel=\"debug\""
   },
   "keywords": [
     "react-native",
@@ -91,7 +93,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-nitro-modules": "*"
   },
   "workspaces": [
     "example"
@@ -161,7 +164,6 @@
     "source": "src",
     "output": "lib",
     "targets": [
-      "codegen",
       [
         "commonjs",
         {
