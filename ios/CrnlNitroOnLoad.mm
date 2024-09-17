@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 #import <NitroModules/HybridObjectRegistry.hpp>
 
-@interface <<iosModulename>>OnLoad : NSObject
+@interface CrnlNitroOnLoad : NSObject
 @end
 
-@implementation <<iosModulename>>OnLoad
+@implementation CrnlNitroOnLoad
 
 using namespace margelo::nitro;
 
