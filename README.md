@@ -5,7 +5,7 @@ Golden Template Test
 ## Installation
 
 ```sh
-npm install crnl-nitro
+npm install crnl-nitro react-native-nitro-modules
 ```
 
 ## Usage
